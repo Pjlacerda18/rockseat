@@ -1,4 +1,6 @@
 h1 {
+    font-family: times 'Times New Roman', Times, serif;
+    text-decoration: underline;
     color: rgb(255, 0, 110);
     ;
     font-size: 45px
@@ -15,6 +17,7 @@ h3 {
 }
 
 body {
+    text-align: center;
     font: italic normal .8em arial, sans-serif;
     font-size: 40 px;
     margin: 2px solid color red
