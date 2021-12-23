@@ -89,3 +89,11 @@ try {
 } catch (a) {
     console.log(a)
 }
+
+for (let i = 0; i < 10; i++) {
+    if (i === 5) {
+        break
+    } // caso queira excluir somente um numero usar o Continue ao invés do Break
+    console.log(i)
+}
+//While caso não se saiba quando parar
