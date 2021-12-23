@@ -13,7 +13,10 @@ techs.pop() //Remove do fim da array
 techs.shift() //Remove do ínicio da array
 let index = techs.indexOf('Css')
 console.log(index)
-
-
-
 console.log(techs.slice(1, 3)) // retirar algo da array.
+
+let name = new String('Pedro');
+name.surname = "Lacerda"
+
+let age = new Number(22)
+console.log(name, age)
