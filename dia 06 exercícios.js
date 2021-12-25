@@ -40,3 +40,110 @@ function calculatebalance() {
     }
 }
 calculatebalance()
+
+
+function transformDegree(degree) {
+    const celsiusExists = degree.toUpperCase().includes("C")
+    const fahrenheitExists = degree.toUpperCase().includes("F")
+
+    if (!celsiusExists && !fahrenheitExists) {
+        throw new Error("Não identificado")
+
+    }
+    let UpdatedDegree = Number(degree.toUpperCase().replace("F", ""))
+    let formula = (fahrenheit) => (fahrenheit - 32) * 5 / 9
+    let degreeSign = 'C'
+
+    if (celsiusExists) {
+        UpdatedDegree = Number(degree.toUpperCase().replace("C", ""))
+        formula = celsius => celsius * 9 / 5 + 32
+        degreeSign = 'F'
+    }
+
+    return formula(UpdatedDegree) + degreeSign
+}
+
+try {
+    console.log(transformDegree("50F"))
+    console.log(transformDegree("10c"))
+    console.log(transformDegree("30Z"))
+} catch (Error) {
+    console.log(Error.message)
+}
+
+
+
+
+
+
+
+const booksByCategory = [{
+        category: "Riqueza",
+        books: [{
+                title: "Os segredos de uma mente milionária",
+                author: "T. Harv Eker",
+            }, {
+                title: "O homem mais rico da Babilônia",
+                author: "George S. Clarson"
+            },
+            {
+                title: "Pai rico, Pai pobre",
+                author: "Robert T. Kiyosaki e Sharon L. Letcher"
+            },
+
+        ],
+    },
+    {
+        category: "Inteligência Emocional",
+        books: [{
+                title: "Você é insubstítuivel",
+                author: "Augusto Cury"
+            },
+            {
+                title: "Ansiedade - Como enfrentar o mal do século",
+                author: "Augusto Cury",
+            },
+            {
+                title: "Os sete hábitos de pessoas altamente eficazes",
+                author: "Stephen R. Covey"
+            }
+        ],
+    }
+]
+const totalcategories = booksByCategory.length
+console.log(totalcategories)
+for (let category of booksByCategory) {
+    console.log("Total de livros na categoria:" + category.category)
+    console.log(category.books.length)
+}
+
+function countAuthors() {
+    let authors = [];
+    for (let category of booksByCategory) {
+        for (let book of category.books) {
+            if (authors.indexOf(book.author) == -1) {
+                authors.push(book.author);
+            }
+        }
+
+    }
+
+    console.log("Total de autores: " + authors.length);
+}
+
+countAuthors()
+
+
+function booksOfAuthor(author) {
+    let books = [];
+    for (let category of booksByCategory) {
+        for (let book of category.books) {
+            if (book.author === author) {
+                books.push(book.title)
+            }
+        }
+    }
+    console.log(`Livros do autor ${author}: ${books.join(", ")}`);
+}
+
+booksOfAuthor('Augusto Cury')
