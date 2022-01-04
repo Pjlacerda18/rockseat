@@ -1,18 +1,18 @@
-let score = 99
-if (score <= 100) {
+let score = 88
+if (score >= 90) {
     console.log("A")
-} else if (score <= 89) {
+} else if (score >= 80) {
     console.log("B")
-} else if (score <= 79) {
+} else if (score >= 70) {
     console.log("C")
-} else if (score <= 69) {
+} else if (score >= 60) {
     console.log("D")
-} else if (score <= 59) {
+} else if (score >= 50) {
     console.log("F")
 } else {
     console.log("Nota não está na escala")
 }
-
+console.log(score)
 let family = {
     incomes: [1200, 2300, 102, 253],
     expenses: [200, 5000, 342, 45, 900]
